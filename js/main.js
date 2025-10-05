@@ -72,3 +72,20 @@ document.addEventListener('DOMContentLoaded', function () {
     slider.addEventListener('mouseenter', stopAutoPlay);
     slider.addEventListener('mouseleave', startAutoPlay);
 });
+
+// SweetAlert2 for all Order Now buttons
+document.querySelectorAll('.order-now-btn').forEach(button => {
+    button.addEventListener('click', function (e) {
+        e.preventDefault();
+        Swal.fire({
+            title: '📞 Please Call to Order',
+            html: `
+                <p><strong>Phone:</strong> +880 173 714 8956 <strong>OR</strong> +880 151 566 8864</p>
+                <p><strong>Name:</strong> Md. Ahatashamul Hoque Tufayl Talukder</p>
+            `,
+            icon: 'info',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#0ea5e9'
+        });
+    });
+});
